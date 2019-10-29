@@ -16,7 +16,7 @@ public class WelcomeController {
     @Autowired
     private RandomClient randomClient;
 
-    @GetMapping(value = "/welcome")
+    @GetMapping(value = "/hello")
     public ResponseEntity<String> welcome() {
         String message = messageClient.getMessage();
         Integer randomNumber = randomClient.getRandomNumber();

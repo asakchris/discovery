@@ -1,0 +1,33 @@
+server:
+  port: 8040
+  servlet:
+    context-path: /api/v1
+management:
+  server:
+    port: 8041
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+
+spring:
+  application:
+    name: Swagger
+
+documentation: 
+  swagger: 
+    services:   
+      - 
+        name: Welcome Rest Service
+        url: /welcome/v2/api-docs
+        version: 2.0
+      - 
+        name: Message Rest Service
+        url: /message/v2/api-docs
+        version: 2.0
+      - 
+        name: Random Rest Service
+        url: /random/v2/api-docs
+        version: 2.0    
+
+

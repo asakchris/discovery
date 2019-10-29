@@ -1,6 +1,7 @@
 server:
   port: 8000
-
+  servlet:
+    context-path: /api/v1/welcome
 management:
   server:
     port: 8001
@@ -24,6 +25,6 @@ feign:
 app:
   feign:
     message:
-      url: ${MESSAGE_SERVICE_URL:http://localhost:8010/}
+      url: ${MESSAGE_SERVICE_URL:http://localhost:8020/api/v1/message}
     random:
-      url: ${RANDOM_SERVICE_URL:http://localhost:8020/}
+      url: ${RANDOM_SERVICE_URL:http://localhost:8030/api/v1/random}

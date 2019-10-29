@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 public class RandomController {
-    @GetMapping(value = "/random")
+    @GetMapping(value = "/display")
     public ResponseEntity<Integer> message() {
         Integer random = getRandomNumber();
         return new ResponseEntity<>(random, HttpStatus.OK);
