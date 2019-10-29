@@ -25,7 +25,7 @@ VM Options: -Dserver.port=8020 -Dmanagement.server.port=8021
 
 Welcome Service
 ```
-VM Options: -Dapp.feign.url=http://localhost:8010/
+VM Options: -Dapp.feign.message.url=http://localhost:8010/api/v1/message -Dapp.feign.random.url=http://localhost:8010/api/v1/random
 ```
 
 ###### docker compose
@@ -37,20 +37,20 @@ docker-compose up -d
 ###### Local
 Message Service
 ```
-http://localhost:8010/message
-http://localhost:8011/actuator/health
+http://localhost:8010/api/v1/message/read
+http://localhost:8011/api/v1/message/actuator/health
 ```
 
 Random Service
 ```
-http://localhost:8020/random
-http://localhost:8021/actuator/health
+http://localhost:8020/api/v1/random/display
+http://localhost:8021/api/v1/random/actuator/health
 ```
 
 Welcome Service
 ```
-http://localhost:8000/welcome
-http://localhost:8001/actuator/health
+http://localhost:8000/api/v1/welcome/hello
+http://localhost:8001/api/v1/welcome/actuator/health
 ```
 
 ### Deploy in AWS ECS
@@ -71,7 +71,8 @@ aws cloudformation create-stack --stack-name SERVICE-DISCOVERY-POC --template-bo
 
 ###### Invoke services using ALB
 ```
-http://APP-ALB-XXXXXXXXX.us-east-1.elb.amazonaws.com/welcome
-http://APP-ALB-XXXXXXXXX.us-east-1.elb.amazonaws.com/message
-http://APP-ALB-XXXXXXXXX.us-east-1.elb.amazonaws.com/random
+http://APP-ALB-XXXXXXXXX.us-east-1.elb.amazonaws.com/api/v1/welcome/hello
+http://APP-ALB-XXXXXXXXX.us-east-1.elb.amazonaws.com/api/v1/message/read
+http://APP-ALB-XXXXXXXXX.us-east-1.elb.amazonaws.com/api/v1/random/display
+http://APP-ALB-XXXXXXXXX.us-east-1.elb.amazonaws.com/api/v1/swagger-ui.html
 ```
