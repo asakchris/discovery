@@ -25,7 +25,7 @@ VM Options: -Dserver.port=8020 -Dmanagement.server.port=8021
 
 Welcome Service
 ```
-VM Options: -Dapp.feign.message.url=http://localhost:8010/api/v1/message -Dapp.feign.random.url=http://localhost:8010/api/v1/random
+VM Options: -Dapp.feign.message.url=http://localhost:8010/api/v1/message -Dapp.feign.random.url=http://localhost:8020/api/v1/random
 ```
 
 ###### docker compose
